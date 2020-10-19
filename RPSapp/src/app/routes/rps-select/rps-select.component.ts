@@ -15,7 +15,7 @@ export class RpsSelectComponent implements OnInit {
 
   SelectOption(option: 'Rock' | 'Paper' | 'Scissors'){
     this.optionPicked = true;
-    this.GameService.SetSelection(option);
+    this.GameService.UserSelection(option);
   }
 
   Shoot(){

@@ -12,9 +12,5 @@ export class RpsResultDisplayComponent implements OnInit {
 
   constructor(public RpsServiceService: RpsServiceService, private router: Router) { }
 
-  ngOnInit(): void {
-
-    
-
-  }
+  ngOnInit(): void {}
 }
