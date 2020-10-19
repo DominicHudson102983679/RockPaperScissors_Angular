@@ -9,6 +9,22 @@ import { delay } from 'rxjs/operators';
 
 export class RpsServiceService {
 
+  private _selection?: "Rock" | "Paper" | "Scissors";
+  
+  get selection() {
+    return this._selection;
+  }
+
+  constructor(){}
+
+  commitSelection(option: "Rock" | "Paper" | "Scissors"){
+    this._selection = option;
+
+  }
+
+
+  /*
+
   private selection: 'Rock' | 'Paper' | 'Scissors';
   private AIselection: 'Rock' | 'Paper' | 'Scissors';
   private outcome: 'Win' | 'Lose' | 'Draw';
@@ -46,6 +62,6 @@ export class RpsServiceService {
       this.router.navigateByUrl('/result');
     });
   }
-
+  */
 }
  
