@@ -1,1 +1,19 @@
-<p>rps-result-display works!</p>
+<h1> You {{RpsServiceService.outcome}}!</h1>
+
+<div class="display"
+    [class.rock] = "RpsServiceService.selection === 'Rock'"
+    [class.scissors] = "RpsServiceService.selection === 'Scissors'"
+    [class.paper] = "RpsServiceService.selection === 'Paper'"
+    >{{RpsServiceService.selection}}
+</div>
+
+<div class="vs"> VS </div>
+
+<div class="display"
+    [class.rock] = "RpsServiceService.AISelection === 'Rock'"
+    [class.scissors] = "RpsServiceService.AISelection === 'Scissors'"
+    [class.paper] = "RpsServiceService.AISelection === 'Paper'"
+    >{{RpsServiceService.AISelection}}
+</div>
+
+<button routerLink="display" class="btn">Try Again</button>

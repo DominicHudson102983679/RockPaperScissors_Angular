@@ -1,0 +1,36 @@
+.display{
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    display: inline-block;
+    color: white;
+    background-size: 100%;
+    background-repeat: no-repeat; 
+}
+
+.display.paper{
+    background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\paper.jpg);
+}
+
+.display.scissors{
+    background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\scissors.jpg);  
+}
+
+.display.rock{
+    background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\rock.jpg);
+}
+
+.btn {
+    background-color: blue;
+    color: white;
+    width: 100px;
+    height: 30px;
+    display: flex;
+}
+
+.vs {
+    width: 50px;
+    height: 200px;
+    padding: 30px;
+    display: inline-block;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RpsServiceService } from 'src/app/rps-service.service'; 
 
 @Component({
   selector: 'app-rps-select',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RpsSelectComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private GameService: RpsServiceService) { }
+  optionPicked: true|false = false;
   ngOnInit(): void {
   }
 
+  SelectOption(option: 'Rock' | 'Paper' | 'Scissors'){
+    this.optionPicked = true;
+    this.GameService.SetSelection(option);
+  }
+
+  Shoot(){
+    this.GameService.CommitOutcome();
+  }
 }
