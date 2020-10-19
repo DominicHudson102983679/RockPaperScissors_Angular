@@ -7,13 +7,13 @@
     >{{RpsServiceService.selection}}
 </div>
 
-<div class="vs"> VS </div>
+<div class="versus"> VS </div>
 
 <div class="display"
-    [class.rock] = "RpsServiceService.AISelection === 'Rock'"
-    [class.paper] = "RpsServiceService.AISelection === 'Paper'"
-    [class.scissors] = "RpsServiceService.AISelection === 'Scissors'"
-    >{{RpsServiceService.AISelection}}
+    [class.rock] = "RpsServiceService.AIoption === 'Rock'"
+    [class.paper] = "RpsServiceService.AIoption === 'Paper'"
+    [class.scissors] = "RpsServiceService.AIoption === 'Scissors'"
+    >{{RpsServiceService.AIoption}}
 </div>
 
 <button routerLink class="btn">Try Again</button>

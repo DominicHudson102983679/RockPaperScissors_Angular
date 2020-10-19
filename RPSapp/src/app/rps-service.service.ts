@@ -9,9 +9,10 @@ import { delay } from 'rxjs/operators';
 
 export class RpsServiceService {
 
-  private selection: 'Rock' | 'Paper' | 'Scissors';
-  private AIselection: 'Rock' | 'Paper' | 'Scissors';
-  private outcome: 'Win' | 'Lose' | 'Draw';
+  private selection?: 'Rock' | 'Paper' | 'Scissors';
+  private AIoption?: 'Rock' | 'Paper' | 'Scissors';
+  _AIselection = null;
+  private outcome?: 'Win' | 'Lose' | 'Draw';
 
   constructor(private router: Router) { }
 
@@ -19,30 +20,30 @@ export class RpsServiceService {
     this.selection = playerOption;
   }
 
-  calculate_outcome(playerOption: 'Rock' | 'Paper' | 'Scissors', AIselection: 'Rock' | 'Paper' | 'Scissors') {
-    if (playerOption == 'Rock' && AIselection == 'Rock' || playerOption == 'Paper' && AIselection == 'Paper' || playerOption == 'Scissors' && AIselection == 'Scissors')
+  calculate_outcome(playerOption: 'Rock' | 'Paper' | 'Scissors', AIoption: 'Rock' | 'Paper' | 'Scissors') {
+    if (playerOption == 'Rock' && AIoption == 'Rock' || playerOption == 'Paper' && AIoption == 'Paper' || playerOption == 'Scissors' && AIoption == 'Scissors')
     {
       this.outcome = 'Draw';
     }
-    if (playerOption == 'Rock' && AIselection == 'Scissors' || playerOption == 'Scissors' && AIselection == 'Paper' || playerOption == 'Paper' && AIselection == 'Rock')
+    if (playerOption == 'Rock' && AIoption == 'Scissors' || playerOption == 'Scissors' && AIoption == 'Paper' || playerOption == 'Paper' && AIoption == 'Rock')
     {
       this.outcome = 'Win';
     }
-    if (playerOption == 'Rock' && AIselection == 'Paper' || playerOption == 'Paper' && AIselection == 'Scissors' || playerOption == 'Scissors' && AIselection == 'Rock')
+    if (playerOption == 'Rock' && AIoption == 'Paper' || playerOption == 'Paper' && AIoption == 'Scissors' || playerOption == 'Scissors' && AIoption == 'Rock')
     {
       this.outcome = 'Lose';
     }
   }
 
-  AISelection(AIoption?: 'Rock' | 'Paper' | 'Scissors') {
-    AIoption = "Scissors";
-    this.AIselection = AIoption;
+  AISelection(option?: 'Rock' | 'Paper' | 'Scissors') {
+    option = 'Paper';
+    this.AIoption = option;
   }
 
   commit_outcome() {
-    of(null).pipe(delay(0)).subscribe(() => {
+    of(null).pipe(delay(100)).subscribe(() => {
       this.AISelection()
-      this.calculate_outcome(this.selection,this.AIselection)
+      this.calculate_outcome(this.selection,this.AIoption)
       this.router.navigateByUrl('/result');
     });
   }
