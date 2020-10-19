@@ -11,33 +11,26 @@ export class RpsServiceService {
 
   private selection?: 'Rock' | 'Paper' | 'Scissors';
   private AIoption?: 'Rock' | 'Paper' | 'Scissors';
-  _AIselection = null;
-  private outcome?: 'Win' | 'Lose' | 'Draw';
+  private outcome: 'Win' | 'Lose' | 'Draw';
 
   constructor(private router: Router) { }
 
-  SetSelection(playerOption: 'Rock' | 'Paper' | 'Scissors'){
-    this.selection = playerOption;
-  }
-
-  calculate_outcome(playerOption: 'Rock' | 'Paper' | 'Scissors', AIoption: 'Rock' | 'Paper' | 'Scissors') {
-    if (playerOption == 'Rock' && AIoption == 'Rock' || playerOption == 'Paper' && AIoption == 'Paper' || playerOption == 'Scissors' && AIoption == 'Scissors')
-    {
-      this.outcome = 'Draw';
-    }
-    if (playerOption == 'Rock' && AIoption == 'Scissors' || playerOption == 'Scissors' && AIoption == 'Paper' || playerOption == 'Paper' && AIoption == 'Rock')
-    {
-      this.outcome = 'Win';
-    }
-    if (playerOption == 'Rock' && AIoption == 'Paper' || playerOption == 'Paper' && AIoption == 'Scissors' || playerOption == 'Scissors' && AIoption == 'Rock')
-    {
-      this.outcome = 'Lose';
-    }
+  SetSelection(userChoice: 'Rock' | 'Paper' | 'Scissors'){
+    this.selection = userChoice;
   }
 
   AISelection(option?: 'Rock' | 'Paper' | 'Scissors') {
     option = 'Paper';
     this.AIoption = option;
+  }
+
+  calculate_outcome(userChoice: 'Rock' | 'Paper' | 'Scissors', AIoption: 'Rock' | 'Paper' | 'Scissors') {
+    if (userChoice == 'Rock' && AIoption == 'Rock' || userChoice == 'Paper' && AIoption == 'Paper' || userChoice == 'Scissors' && AIoption == 'Scissors')
+    { this.outcome = 'Draw'; }
+    else if (userChoice == 'Rock' && AIoption == 'Scissors' || userChoice == 'Scissors' && AIoption == 'Paper' || userChoice == 'Paper' && AIoption == 'Rock')
+    { this.outcome = 'Win'; }
+    else if (userChoice == 'Rock' && AIoption == 'Paper' || userChoice == 'Paper' && AIoption == 'Scissors' || userChoice == 'Scissors' && AIoption == 'Rock')
+    { this.outcome = 'Lose'; }
   }
 
   commit_outcome() {

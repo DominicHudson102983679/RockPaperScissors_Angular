@@ -1,4 +1,13 @@
-.display{
+.rpsContainer {
+    width: 650px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paper{
+    background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\paper.jpg);
     height: 200px;
     width: 200px;
     margin: 10px;
@@ -8,16 +17,26 @@
     background-repeat: no-repeat; 
 }
 
-.display.paper{
-    background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\paper.jpg);
+.scissors{
+    background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\scissors.jpg); 
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    display: inline-block;
+    color: white;
+    background-size: 100%;
+    background-repeat: no-repeat;  
 }
 
-.display.scissors{
-    background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\scissors.jpg);  
-}
-
-.display.rock{
+.rock{
     background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\rock.jpg);
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    display: inline-block;
+    color: white;
+    background-size: 100%;
+    background-repeat: no-repeat; 
 }
 
 .btn {
@@ -28,9 +47,19 @@
     display: flex;
 }
 
-.versus {
+.vsContainer {
     width: 50px;
     height: 200px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+}
+
+.versus {
+    width: 10px;
+    height: 20px;
     padding: 30px;
     display: inline-block;
 }
