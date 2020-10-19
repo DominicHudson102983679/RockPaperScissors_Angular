@@ -10,16 +10,11 @@ import { Router } from '@angular/router';
 })
 export class RpsResultDisplayComponent implements OnInit {
 
-  constructor(public rpsServiceService: RpsServiceService, private router: Router) {
-    this.rpsServiceService.selection;
-  }
+  constructor(public RpsServiceService: RpsServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    if (this.rpsServiceService.selection == null) {
-      this.router.navigateByUrl("/pick");
-  }
 
-  tryAgain() {
-    this.router.navigateByUrl("/pick");
+    
+
   }
 }
