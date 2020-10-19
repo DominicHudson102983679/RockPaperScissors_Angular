@@ -19,6 +19,6 @@ export class RpsSelectComponent implements OnInit {
   }
 
   Shoot(){
-    this.GameService.CommitOutcome();
+    this.GameService.commit_outcome();
   }
 }

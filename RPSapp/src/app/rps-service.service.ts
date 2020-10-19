@@ -8,9 +8,10 @@ import { delay } from 'rxjs/operators';
 })
 
 export class RpsServiceService {
-  private selection?: 'Rock' | 'Paper' | 'Scissors';
-  private AIselection?: 'Rock' | 'Paper' | 'Scissors';
-  private outcome?: 'Win' | 'Lose' | 'Draw';
+
+  private selection: 'Rock' | 'Paper' | 'Scissors';
+  private AIselection: 'Rock' | 'Paper' | 'Scissors';
+  private outcome: 'Win' | 'Lose' | 'Draw';
 
   constructor(private router: Router) { }
 
@@ -18,7 +19,7 @@ export class RpsServiceService {
     this.selection = playerOption;
   }
 
-  CalcOutcome(playerOption: 'Rock' | 'Paper' | 'Scissors', AIselection: 'Rock' | 'Paper' | 'Scissors') {
+  calculate_outcome(playerOption: 'Rock' | 'Paper' | 'Scissors', AIselection: 'Rock' | 'Paper' | 'Scissors') {
     if (playerOption == 'Rock' && AIselection == 'Rock' || playerOption == 'Paper' && AIselection == 'Paper' || playerOption == 'Scissors' && AIselection == 'Scissors')
     {
       this.outcome = 'Draw';
@@ -33,21 +34,18 @@ export class RpsServiceService {
     }
   }
 
-  
-
   AISelection(AIoption?: 'Rock' | 'Paper' | 'Scissors') {
     AIoption = "Scissors";
     this.AIselection = AIoption;
   }
 
-  CommitOutcome() {
+  commit_outcome() {
     of(null).pipe(delay(0)).subscribe(() => {
       this.AISelection()
-      this.CalcOutcome(this.selection,this.AIselection)
+      this.calculate_outcome(this.selection,this.AIselection)
       this.router.navigateByUrl('/result');
     });
   }
-
 
 }
  

@@ -2,8 +2,8 @@
 
 <div class="display"
     [class.rock] = "RpsServiceService.selection === 'Rock'"
-    [class.scissors] = "RpsServiceService.selection === 'Scissors'"
     [class.paper] = "RpsServiceService.selection === 'Paper'"
+    [class.scissors] = "RpsServiceService.selection === 'Scissors'"
     >{{RpsServiceService.selection}}
 </div>
 
@@ -11,9 +11,9 @@
 
 <div class="display"
     [class.rock] = "RpsServiceService.AISelection === 'Rock'"
-    [class.scissors] = "RpsServiceService.AISelection === 'Scissors'"
     [class.paper] = "RpsServiceService.AISelection === 'Paper'"
+    [class.scissors] = "RpsServiceService.AISelection === 'Scissors'"
     >{{RpsServiceService.AISelection}}
 </div>
 
-<button routerLink="display" class="btn">Try Again</button>
+<button routerLink class="btn">Try Again</button>

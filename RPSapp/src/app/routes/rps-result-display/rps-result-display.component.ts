@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RpsServiceService } from 'src/app/rps-service.service';
 import { Router } from '@angular/router';
-import { RpsServiceService } from 'src/app/rps-service.service'; 
+
 
 @Component({
   selector: 'app-rps-result-display',
@@ -9,9 +10,11 @@ import { RpsServiceService } from 'src/app/rps-service.service';
 })
 export class RpsResultDisplayComponent implements OnInit {
 
-  constructor(private RpsServiceService: RpsServiceService) { }
+  constructor(public RpsServiceService: RpsServiceService, private router: Router) { }
 
   ngOnInit(): void {
+
+    
 
   }
 }
