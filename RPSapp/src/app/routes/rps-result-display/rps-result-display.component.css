@@ -6,6 +6,10 @@
     justify-content: center;
 }
 
+h1 {
+    text-align: center;
+}
+
 .paper{
     background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\paper.jpg);
     height: 200px;
@@ -45,6 +49,8 @@
     width: 100px;
     height: 30px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .vsContainer {
@@ -61,4 +67,20 @@
     height: 20px;
     padding: 30px;
     display: inline-block;
+}
+
+.btnContainer {
+    width: 650px;
+    height: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerContainer {
+    width: 650px;
+    height: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

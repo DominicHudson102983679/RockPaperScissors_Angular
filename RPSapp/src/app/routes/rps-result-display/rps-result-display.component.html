@@ -1,7 +1,7 @@
 <h2>Rock, Paper, Scissors</h2>
-
-<h1> You {{RpsServiceService.outcome}}!</h1>
-
+<div class="headerContainer">
+    <h1> You {{RpsServiceService.outcome}}!</h1>
+</div>
 <div class="rpsContainer">
     <div
         [class.rock] = "RpsServiceService.selection === 'Rock'"
@@ -21,5 +21,6 @@
         >{{RpsServiceService.AIoption}}
     </div>
 </div>
-
-<button routerLink class="btn">Try Again</button>
+<div class="btnContainer">
+    <button routerLink class="btn">Try Again</button>
+</div>

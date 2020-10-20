@@ -25,20 +25,26 @@ export class RpsServiceService {
   }
 
   calculate_outcome(userChoice: 'Rock' | 'Paper' | 'Scissors', AIoption: 'Rock' | 'Paper' | 'Scissors') {
-    if ( userChoice == 'Rock' && AIoption == 'Scissors' || 
-         userChoice == 'Scissors' && AIoption == 'Paper' || 
-         userChoice == 'Paper' && AIoption == 'Rock')   
-         {this.outcome = 'Win';}
+    if (userChoice == 'Rock' && AIoption == 'Scissors' || 
+        userChoice == 'Scissors' && AIoption == 'Paper' || 
+        userChoice == 'Paper' && AIoption == 'Rock')
+       {
+        this.outcome = 'Win';
+       }
 
-    else if ( userChoice == 'Rock' && AIoption == 'Paper' || 
-              userChoice == 'Paper' && AIoption == 'Scissors' || 
-              userChoice == 'Scissors' && AIoption == 'Rock') 
-              {this.outcome = 'Lose';}
+    if (userChoice == 'Rock' && AIoption == 'Paper' || 
+        userChoice == 'Paper' && AIoption == 'Scissors' || 
+        userChoice == 'Scissors' && AIoption == 'Rock') 
+       {
+        this.outcome = 'Lose';
+       }
 
-    else if ( userChoice == 'Rock' && AIoption == 'Rock' || 
-              userChoice == 'Paper' && AIoption == 'Paper' || 
-              userChoice == 'Scissors' && AIoption == 'Scissors') 
-              {this.outcome = 'Draw';}
+    if (userChoice == 'Rock' && AIoption == 'Rock' || 
+        userChoice == 'Paper' && AIoption == 'Paper' || 
+        userChoice == 'Scissors' && AIoption == 'Scissors') 
+       {
+        this.outcome = 'Draw';
+       }
   }
 
   commit_outcome() {
