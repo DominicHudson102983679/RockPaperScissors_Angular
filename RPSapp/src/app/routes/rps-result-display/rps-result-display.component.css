@@ -67,6 +67,7 @@ h1 {
     height: 20px;
     padding: 30px;
     display: inline-block;
+    font-weight: bolder;
 }
 
 .btnContainer {

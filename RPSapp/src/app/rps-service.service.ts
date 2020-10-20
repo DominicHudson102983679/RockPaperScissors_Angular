@@ -11,7 +11,7 @@ export class RpsServiceService {
 
   private selection?: 'Rock' | 'Paper' | 'Scissors';
   private AIoption?: 'Rock' | 'Paper' | 'Scissors';
-  private outcome: 'Win' | 'Lose' | 'Draw';
+  private outcome: 'Won' | 'Lose' | 'Draw';
 
   constructor(private router: Router) { }
 
@@ -29,7 +29,7 @@ export class RpsServiceService {
         userChoice == 'Scissors' && AIoption == 'Paper' || 
         userChoice == 'Paper' && AIoption == 'Rock')
        {
-        this.outcome = 'Win';
+        this.outcome = 'Won';
        }
 
     if (userChoice == 'Rock' && AIoption == 'Paper' || 
