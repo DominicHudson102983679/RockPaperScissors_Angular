@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+C:\Program Files\dotnet\sdk\3.1.402\Microsoft.Common.CurrentVersion.targets(4651,5): 
+
+warning MSB3026: Could not copy "C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\API\obj\Debug\netcoreapp3.1\RockPaperScissors_Angular.exe" 
+to "bin\Debug\netcoreapp3.1\RockPaperScissors_Angular.exe". Beginning retry 1 in 1000ms. 
+The process cannot access the file 'C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\API\bin\Debug\netcoreapp3.1\RockPaperScissors_Angular.exe' 
+because it is being used by another process.  [C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\API\RockPaperScissors_Angular.csproj]
