@@ -11,20 +11,19 @@ namespace RockPaperScissors_Angular.Controllers
     [ApiController]
     [Route("[controller]")]
     
-    
     public class rpsController : ControllerBase
     {
-        public rpsController()
-        {
-
-        }
-        [HttpPost]
         
-        public GameResult GetResult(PlayRequest angularPlayRequest)
+
+        [HttpPost]
+        public Round PlayRequest([FromBody] PlayRequest UserChoice)
         {
-            GameResult g = new GameResult(angularPlayRequest.PlayerChoice);
-            return g;
-        } 
+            string choice = UserChoice.UserChoice;
+
+            Round r = new Round(choice);
+
+            return r;
+        }
         
     }
     
