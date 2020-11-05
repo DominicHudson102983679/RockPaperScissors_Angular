@@ -1,13 +1,49 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { SubmitRequestModel, SubmitResponeModel } from "C:/Users/User/Documents/GitHub/RockPaperScissorsAngular/RockPaperScissors_Angular/RPSapp/src/app/models/submit-model";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class RpsServiceService {
+
+  private _selection?: string;
+  private _username?: string;
+
+  get selection() {
+    return this._selection;
+  }
+
+  get username() {
+    return this._username;
+  }
+
+  cpuChoice: string;
+  result: string;
+
+  constructor(private router: Router, private client: HttpClient) { }
+
+  commitUsername(username: string){
+    this._username = username;
+  }
+
+  commitSelection(option: SubmitRequestModel) {
+    this.client.post<SubmitResponeModel>("http://localhost:5000/rps" || "http://localhost:5001/rps", option)
+      .subscribe((response) => {
+        this._username = response.username,
+        this._selection = response.userChoice,
+        this.cpuChoice = response.cpuChoice,
+        this.result = response.result,
+        this.router.navigateByUrl("/display");
+      })
+  }
+
+  // Release 1.0 Code
+  /*
 
   private selection?: 'Rock' | 'Paper' | 'Scissors';
   private AIoption?: 'Rock' | 'Paper' | 'Scissors';
@@ -20,6 +56,7 @@ export class RpsServiceService {
   }
 
   AISelection(option?: 'Rock' | 'Paper' | 'Scissors') {
+    // setting AI selection as paper
     option = 'Paper';
     this.AIoption = option;
   }
@@ -54,6 +91,8 @@ export class RpsServiceService {
       this.router.navigateByUrl('/result');
     });
   }
+
+  */
 
 }
  

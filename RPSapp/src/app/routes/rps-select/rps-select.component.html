@@ -1,10 +1,9 @@
-<h2>Rock, Paper, Scissors</h2>
 <div class="rpsContainer">
-    <div class="rock" (click)="SelectOption('Rock')"></div>
-    <div class="paper" (click)="SelectOption('Paper')"></div>
-    <div class="scissors" (click)="SelectOption('Scissors')"></div>
+    <div class="rock" (click)="selectOption('Rock')"></div>
+    <div class="paper" (click)="selectOption('Paper')"></div>
+    <div class="scissors" (click)="selectOption('Scissors')"></div>
 </div>
 
 <div class="container">
-    <button class="btn" (click)="Shoot()" [disabled]="optionPicked === false">Shoot!</button>
+    <button class="btn" (click)="send()">Shoot!</button>
 </div>

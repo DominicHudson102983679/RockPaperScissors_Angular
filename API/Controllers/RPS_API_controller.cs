@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using RockPaperScissors_Angular.Models;
+using System.Web.HttpPost;
+using System.Web.HttpGet;
 
 namespace RockPaperScissors_Angular.Controllers
 {
@@ -13,16 +12,49 @@ namespace RockPaperScissors_Angular.Controllers
     
     public class rpsController : ControllerBase
     {
-        
+        public static List<User> Positions = new List<User>();
+
+        public rpsController()
+        {
+
+        }
 
         [HttpPost]
-        public Round PlayRequest([FromBody] PlayRequest UserChoice)
+        public Round PlayRequest([FromBody] PlayRequest request)
         {
-            string choice = UserChoice.UserChoice;
+            Round r = new Round(request.Username, request.UserChoice);
 
-            Round r = new Round(choice);
+            User user = null;
+            User found = Positions.Find(u => u.Username == request.Username);
+
+            if (found == null)
+            {
+                user = new User(request.Username, 0, 1);
+                Positions.Add(user);
+            }
+            else
+            {
+                user = found;
+                user.TurnsPlayed++;
+            }
+
+            if (r.Result == "You win")
+            {
+                user.Wins++;
+            }
+
+            user.CalcWLDRatio();
 
             return r;
+            
+        }
+
+        [HttpGet("Leaderboard")]
+        public List<User> ViewLeaderBoard()
+        {
+            List<User> LeaderboardView = Positions.OrderByDescending(u => u.WinRatio).ToList();
+
+            return LeaderboardView;
         }
         
     }
