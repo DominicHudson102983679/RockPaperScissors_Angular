@@ -8,6 +8,7 @@ import { RpsSelectComponent } from './routes/rps-select/rps-select.component';
 import { ScoreListComponent } from './components/score-list/score-list.component';
 import { ScoreComponent } from './components/score/score.component';
 import { RpsReportDisplayComponent } from './routes/rps-report-display/rps-report-display.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RpsReportDisplayComponent } from './routes/rps-report-display/rps-repor
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
