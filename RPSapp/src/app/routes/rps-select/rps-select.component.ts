@@ -12,7 +12,7 @@ export class RpsSelectComponent implements OnInit {
   selection?: "Rock" | "Paper" | "Scissors";
   
   constructor(private rpsService: RpsServiceService, private router: Router) { }
-  // optionPicked: true|false = false;
+  optionPicked: true|false = false;
   ngOnInit(): void {
   }
 
@@ -31,10 +31,4 @@ export class RpsSelectComponent implements OnInit {
       })
     }
   }
-
-  /*
-  Shoot(){
-    this.rpsService.commit_outcome();
-  }
-  */
 }

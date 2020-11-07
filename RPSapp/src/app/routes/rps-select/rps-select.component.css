@@ -1,4 +1,5 @@
 .rpsContainer {
+    padding-top: 20px;
     width: 650px;
     height: 300px;
     display: flex;
@@ -6,7 +7,7 @@
     justify-content: center;
 }
 
-.paper{
+.Paper{
     background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\paper.jpg);  
     height: 200px;
     width: 200px;
@@ -16,7 +17,7 @@
     background-repeat: no-repeat; 
 }
 
-.scissors{
+.Scissors{
     background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\scissors.jpg);
     height: 200px;
     width: 200px;
@@ -26,7 +27,7 @@
     background-repeat: no-repeat; 
 }
 
-.rock{
+.Rock{
     background-image: url(C:\Users\User\Documents\GitHub\RockPaperScissorsAngular\RockPaperScissors_Angular\RPSapp\src\assets\rock.jpg);
     height: 200px;
     width: 200px;

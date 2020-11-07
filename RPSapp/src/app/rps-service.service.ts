@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { SubmitRequestModel, SubmitResponeModel } from "C:/Users/User/Documents/GitHub/RockPaperScissorsAngular/RockPaperScissors_Angular/RPSapp/src/app/models/submit-model";
+import { SubmitRequestModel, SubmitResponseModel } from "C:/Users/User/Documents/GitHub/RockPaperScissorsAngular/RockPaperScissors_Angular/RPSapp/src/app/models/submit-model";
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +32,7 @@ export class RpsServiceService {
   }
 
   commitSelection(option: SubmitRequestModel) {
-    this.client.post<SubmitResponeModel>("http://localhost:5000/rps" || "http://localhost:5001/rps", option)
+    this.client.post<SubmitResponseModel>("http://localhost:5000/rps", option)
       .subscribe((response) => {
         this._username = response.username,
         this._selection = response.userChoice,

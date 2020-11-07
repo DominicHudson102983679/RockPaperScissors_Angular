@@ -3,7 +3,7 @@ export interface SubmitRequestModel {
     userChoice: string;
 }
 
-export interface SubmitResponeModel {
+export interface SubmitResponseModel {
     username: string;
     userChoice: string;
     cpuChoice: string;

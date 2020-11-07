@@ -2,13 +2,12 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using RockPaperScissors_Angular.Models;
-using System.Web.HttpPost;
-using System.Web.HttpGet;
+
 
 namespace RockPaperScissors_Angular.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     
     public class rpsController : ControllerBase
     {
@@ -19,7 +18,7 @@ namespace RockPaperScissors_Angular.Controllers
 
         }
 
-        [HttpPost]
+        [HttpPost("play")]
         public Round PlayRequest([FromBody] PlayRequest request)
         {
             Round r = new Round(request.Username, request.UserChoice);
@@ -38,7 +37,7 @@ namespace RockPaperScissors_Angular.Controllers
                 user.TurnsPlayed++;
             }
 
-            if (r.Result == "You win")
+            if (r.Result == "You Win!")
             {
                 user.Wins++;
             }

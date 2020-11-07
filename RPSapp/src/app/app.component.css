@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    width: 620px;
+    height:70px;
+    justify-content: space-between;
+
+}
+
+p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    
+}
+
+.login {
+float: right;    
+}
+
+h2 {
+    float: left;
+    padding-left: 30px;
+}
+

@@ -1,5 +1,6 @@
 use rps;
 
+
 IF OBJECT_ID('PLAYER') IS NOT NULL
 DROP TABLE PLAYER;
 
