@@ -41,19 +41,13 @@ namespace RockPaperScissors_Angular.Models
             if (this.CPUChoice == "Rock" && this.UserChoice == "Paper" || this.CPUChoice == "Paper" && this.UserChoice == "scissors" || this.CPUChoice == "Scissors" && this.UserChoice == "Rock")
             {
                 return "You Win!";
-            }
-
-            else if (this.CPUChoice == "Rock" && this.UserChoice == "Rock" || this.CPUChoice == "Paper" && this.UserChoice == "Paper" || this.CPUChoice == "Scissors" && this.UserChoice == "Scissors")
+            } else if (this.CPUChoice == "Rock" && this.UserChoice == "Rock" || this.CPUChoice == "Paper" && this.UserChoice == "Paper" || this.CPUChoice == "Scissors" && this.UserChoice == "Scissors")
             {
                 return "Draw!";
-            }
-
-            else if (this.CPUChoice == "Rock" && this.UserChoice == "Scissors" || this.CPUChoice == "Paper" && this.UserChoice == "Rock" || this.CPUChoice == "Scissors" && this.UserChoice == "Paper")
+            } else if (this.CPUChoice == "Rock" && this.UserChoice == "Scissors" || this.CPUChoice == "Paper" && this.UserChoice == "Rock" || this.CPUChoice == "Scissors" && this.UserChoice == "Paper")
             {
                 return "You Lost!";
-            }
-
-            else
+            } else
             {
                 return "ERROR ERROR ERROR ERROR ERROR";
             }

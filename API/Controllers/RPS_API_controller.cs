@@ -4,10 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using RockPaperScissors_Angular.Models;
 
 
+
 namespace RockPaperScissors_Angular.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     
     public class rpsController : ControllerBase
     {
@@ -18,7 +19,7 @@ namespace RockPaperScissors_Angular.Controllers
 
         }
 
-        [HttpPost("play")]
+        [HttpPost]
         public Round PlayRequest([FromBody] PlayRequest request)
         {
             Round r = new Round(request.Username, request.UserChoice);

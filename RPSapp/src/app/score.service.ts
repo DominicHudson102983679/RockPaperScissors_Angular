@@ -17,7 +17,7 @@ export class ScoreService {
   }
 
   get() {
-    this.httpClient.get<User[]>("http://localhost:5000/rps/leaderboard").subscribe((response) => {
+    this.httpClient.get<User[]>("http://localhost:5000/result").subscribe((response) => {
       this.scores = response;
     })
   }

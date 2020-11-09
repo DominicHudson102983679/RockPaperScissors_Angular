@@ -25,7 +25,7 @@ namespace RockPaperScissors_Angular
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(options =>
@@ -36,6 +36,7 @@ namespace RockPaperScissors_Angular
                         .AllowAnyHeader();
                 });
             });
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

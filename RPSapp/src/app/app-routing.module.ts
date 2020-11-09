@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RpsResultDisplayComponent } from './routes/rps-result-display/rps-result-display.component';
 import { RpsSelectComponent } from './routes/rps-select/rps-select.component';
+import { RpsReportDisplayComponent } from './routes/rps-report-display/rps-report-display.component';
 
 
 const routes: Routes = [
+{path: "selection", component: RpsSelectComponent }, 
 {path: "result", component: RpsResultDisplayComponent },
-{path: "selection", component: RpsSelectComponent },
+{path: "leaderboard", component: RpsReportDisplayComponent },
 
 {path: "**", redirectTo: "selection" },
 
