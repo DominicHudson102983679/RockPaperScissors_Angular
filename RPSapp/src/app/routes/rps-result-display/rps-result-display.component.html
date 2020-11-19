@@ -1,19 +1,19 @@
-<h2>Rock, Paper, Scissors</h2>
+<br>
 <div class="headerContainer">
-    <h1> You {{RpsServiceService.result}}!</h1>
+    <h1>{{rpsServiceService.result}}</h1>
 </div>
 <div class="rpsContainer">
-    <div class="Rock" *ngIf="RpsServiceService.selection === 'Rock'"></div>
-    <div class="Paper" *ngIf="RpsServiceService.selection === 'Paper'"></div>
-    <div class="Scissors" *ngIf="RpsServiceService.selection === 'Scissors'"></div>
+    <div class="Rock" *ngIf="rpsServiceService.selection === 'rock'"></div>
+    <div class="Paper" *ngIf="rpsServiceService.selection === 'paper'"></div>
+    <div class="Scissors" *ngIf="rpsServiceService.selection === 'scissors'"></div>
 
 <div class="vsContainer">
     <div class="versus"> VS </div>
 </div>
 
-    <div class="Rock" *ngIf="RpsServiceService.cpuChoice === 'Rock'"></div>
-    <div class="Paper" *ngIf="RpsServiceService.cpuChoice === 'Paper'"></div>
-    <div class="Scissors" *ngIf="RpsServiceService.cpuChoice === 'Scissors'"></div>
+    <div class="Rock" *ngIf="rpsServiceService.cpuChoice === 'rock'"></div>
+    <div class="Paper" *ngIf="rpsServiceService.cpuChoice === 'paper'"></div>
+    <div class="Scissors" *ngIf="rpsServiceService.cpuChoice === 'scissors'"></div>
 </div>
 <div class="btnContainer">
     <button routerLink class="btn">Try Again</button>

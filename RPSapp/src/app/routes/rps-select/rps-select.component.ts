@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RpsServiceService } from 'src/app/rps-service.service'; 
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rps-select',
@@ -9,26 +8,28 @@ import { Router } from '@angular/router';
 })
 export class RpsSelectComponent implements OnInit {
 
-  selection?: "Rock" | "Paper" | "Scissors";
+  selection?: "rock" | "paper" | "scissors";
   
-  constructor(private rpsService: RpsServiceService, private router: Router) { }
-  optionPicked: true|false = false;
+  constructor(private rpsServiceService: RpsServiceService) { }
+  
   ngOnInit(): void {
   }
 
-  selectOption(option: 'Rock' | 'Paper' | 'Scissors'){
+  selectOption(option: 'rock' | 'paper' | 'scissors'){
     this.selection = option;
   }
 
   send() {
-    if (this.rpsService.username == null) {
+    if (this.rpsServiceService.username == null) {
       alert("No username entered")
+    } else if (this.selection == null) {
+      alert("No selection entered")
     }
     else {
-      this.rpsService.commitSelection({
-        username: this.rpsService.username,
+      this.rpsServiceService.commitSelection({
+        username: this.rpsServiceService.username,
         userChoice: this.selection
-      })
+      });
     }
   }
 }

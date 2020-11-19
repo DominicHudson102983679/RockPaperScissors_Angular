@@ -23,7 +23,7 @@ export class AppComponent {
       this.playing = false;
     }
     else {
-      this.router.navigateByUrl("/pick");
+      this.router.navigateByUrl("/selection");
       this.playing = true
     }
   }

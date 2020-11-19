@@ -11,4 +11,8 @@
     <div class="main">
         <router-outlet></router-outlet>
     </div>
+
+    <a *ngIf="playing" (click)="toggleReports()" class="leaderboardBtn">View Leaderboards</a>
+  <a *ngIf="!playing" (click)="toggleReports()" class="playAgainBtn">Play Again</a>
+
 </div>

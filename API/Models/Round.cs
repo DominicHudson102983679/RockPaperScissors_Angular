@@ -1,5 +1,4 @@
 using System;
-using RockPaperScissors_Angular.Models;
 
 namespace RockPaperScissors_Angular.Models
 {
@@ -26,30 +25,48 @@ namespace RockPaperScissors_Angular.Models
             switch (rCPUChoice)
             {
                 case 0:
-                    return "Rock";
+                    return "rock";
                 case 1:
-                    return "Paper";
+                    return "paper";
                 case 2:
-                    return "Scissors";
+                    return "scissors";
                 default:
-                    return "ERROR ERROR ERROR ERROR ERROR";
+                    return "rCPUChoice error";
             }
         }
 
         public string GetResult()
         {
-            if (this.CPUChoice == "Rock" && this.UserChoice == "Paper" || this.CPUChoice == "Paper" && this.UserChoice == "scissors" || this.CPUChoice == "Scissors" && this.UserChoice == "Rock")
-            {
+            // cpuChoice: Rock
+            if (this.UserChoice == "paper" && this.CPUChoice == "rock"){
                 return "You Win!";
-            } else if (this.CPUChoice == "Rock" && this.UserChoice == "Rock" || this.CPUChoice == "Paper" && this.UserChoice == "Paper" || this.CPUChoice == "Scissors" && this.UserChoice == "Scissors")
-            {
-                return "Draw!";
-            } else if (this.CPUChoice == "Rock" && this.UserChoice == "Scissors" || this.CPUChoice == "Paper" && this.UserChoice == "Rock" || this.CPUChoice == "Scissors" && this.UserChoice == "Paper")
-            {
+            } else if (this.CPUChoice == "rock" && this.UserChoice == "rock" ){
+                return "It's a Draw!";
+            } else if (this.CPUChoice == "rock" && this.UserChoice == "scissors" ){
+                return "You Lose!";
+            }
+
+            // cpuChoice: Paper
+            else if (this.CPUChoice == "paper" && this.UserChoice == "scissors"){
+                return "You Win!";
+            } else if(this.CPUChoice == "paper" && this.UserChoice == "paper" ){
+                return "It's a Draw!";
+            }else if(this.CPUChoice == "paper" && this.UserChoice == "rock" ){
+                return "You Lose!";
+            }
+
+            // cpuChoice: Scissors
+            
+            else if (this.CPUChoice == "scissors" && this.UserChoice == "scissors"){
+                return "It's a Draw!";
+            } else if(this.CPUChoice == "scissors" && this.UserChoice == "paper"){
                 return "You Lost!";
-            } else
-            {
-                return "ERROR ERROR ERROR ERROR ERROR";
+            } else if (this.CPUChoice == "scissors" && this.UserChoice == "rock"){
+                return "You Win!";
+            }
+
+            else {
+                return "GetResult error in Round.cs";
             }
         }
     }

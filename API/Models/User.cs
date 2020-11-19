@@ -14,10 +14,10 @@ namespace RockPaperScissors_Angular.Models
             this.Username = username;
             this.Wins = wins;
             this.TurnsPlayed = turnsPlayed;
-            CalcWLDRatio();
+            CalcWRatio();
         }
 
-        public void CalcWLDRatio()
+        public void CalcWRatio()
         {
             double ratio = (this.Wins / this.TurnsPlayed) * 100;
             ratio = Math.Round(ratio);

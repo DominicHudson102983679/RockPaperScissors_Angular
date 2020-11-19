@@ -12,7 +12,7 @@ export class ScoreComponent implements OnInit {
 
   @Input()
   score: User;
-  
+
   constructor() { }
 
   ngOnInit(): void {

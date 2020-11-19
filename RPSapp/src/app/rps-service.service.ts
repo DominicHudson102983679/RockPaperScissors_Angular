@@ -33,7 +33,7 @@ export class RpsServiceService {
   }
 
   commitSelection(option: SubmitRequestModel) {
-    this.client.post<SubmitResponseModel>("http://localhost:5000/result/", option)
+    this.client.post<SubmitResponseModel>("http://localhost:5000/rps", option)
       .subscribe((response) => {
         this._username = response.username,
         this._selection = response.userChoice,

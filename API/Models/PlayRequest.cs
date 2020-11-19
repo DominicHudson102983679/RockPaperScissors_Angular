@@ -1,5 +1,3 @@
-using System;
-
 namespace RockPaperScissors_Angular.Models
 {
     public class PlayRequest
@@ -9,7 +7,9 @@ namespace RockPaperScissors_Angular.Models
         public string UserChoice { get; set; }
 
         public PlayRequest() 
-        {}
+        {
+            
+        }
     }
 
 }

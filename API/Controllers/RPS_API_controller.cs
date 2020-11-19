@@ -2,13 +2,14 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using RockPaperScissors_Angular.Models;
+using System.Data.SqlClient;
 
 
 
 namespace RockPaperScissors_Angular.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("rps")]
     
     public class rpsController : ControllerBase
     {
@@ -19,6 +20,7 @@ namespace RockPaperScissors_Angular.Controllers
 
         }
 
+        //
         [HttpPost]
         public Round PlayRequest([FromBody] PlayRequest request)
         {
@@ -43,7 +45,7 @@ namespace RockPaperScissors_Angular.Controllers
                 user.Wins++;
             }
 
-            user.CalcWLDRatio();
+            user.CalcWRatio();
 
             return r;
             
