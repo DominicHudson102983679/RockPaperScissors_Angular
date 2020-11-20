@@ -12,7 +12,8 @@
         <router-outlet></router-outlet>
     </div>
 
-    <a *ngIf="playing" (click)="toggleReports()" class="leaderboardBtn">View Leaderboards</a>
-  <a *ngIf="!playing" (click)="toggleReports()" class="playAgainBtn">Play Again</a>
-
+    <div class="btnContainer">
+        <a *ngIf="playing" (click)="toggleReports()" class="leaderboardBtn">View Report ></a>
+        <a *ngIf="!playing" (click)="toggleReports()" class="playAgainBtn">Play Again</a>
+    </div>
 </div>

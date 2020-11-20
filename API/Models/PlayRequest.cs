@@ -6,10 +6,7 @@ namespace RockPaperScissors_Angular.Models
         public string Username { get; set; }
         public string UserChoice { get; set; }
 
-        public PlayRequest() 
-        {
-            
-        }
+        
     }
 
 }

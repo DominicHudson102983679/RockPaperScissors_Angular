@@ -25,6 +25,22 @@ h2 {
 
 .leaderboardBtn {
     width: 100px;
-    background-color: crimson;
+    color: rgb(43, 79, 225);
+    font-weight: bold;
 }
 
+.playAgainBtn {
+    background-color: rgb(43, 79, 225);
+    color: white;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnContainer {
+    
+    width: 620px;
+    height: 0px;
+}
